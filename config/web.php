@@ -6,10 +6,26 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'language' => 'es',
     'components' => [
+        'i18n' => [
+            'translations' => [
+                'app'=>[
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath'=>'@app/messages',
+                ],
+                '*'=> [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath'=>'@app/messages',
+                    'fileMap'=>[
+                        'views'=>'views.php',
+                    ],
+                ],
+            ],
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-            'cookieValidationKey' => '',
+            'cookieValidationKey' => 'mg0hyS2rr_0H1dwbZTVzc204m9oixlQA',
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
